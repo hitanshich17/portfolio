@@ -1362,7 +1362,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/way2go/way2go-routes.png",
+                    "images/projects/way2go/way2go-routes.jpg",
 
                 alt:
                     "Way2Go safer route comparison interface",
