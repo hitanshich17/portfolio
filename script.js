@@ -1545,6 +1545,155 @@ const projectCaseStudies = {
                     "CardWise taught me that recommendation systems are most useful when their complexity remains behind the interface. Users should not have to manually compare dozens of reward structures—the product should translate that information into a clear and trustworthy decision."
             }
         ]
+    },
+
+
+    rfx: {
+        theme:
+            "rfx",
+
+        eyebrow:
+            "SAP America · Enterprise Software",
+
+        title:
+            "RFx Toolkit",
+
+        description:
+            "A CAP application on SAP BTP that brings the request-for-proposal process into one place and uses LLM-powered analysis to speed up evaluation.",
+
+        role:
+            "Full-Stack Software Engineer",
+
+        timeline:
+            "October 2025 — March 2026",
+
+        team:
+            "SAP America",
+
+        tags: [
+            "SAP BTP",
+            "CAP",
+            "SAP HANA",
+            "JavaScript",
+            "LLM Integration",
+            "Cloud Deployment"
+        ],
+
+        images: [],
+
+        sections: [
+            {
+                title:
+                    "The Problem",
+
+                text:
+                    "Responding to requests for proposals meant working across fragmented documents and manual processes. Each response took significant time to assemble and evaluate."
+            },
+
+            {
+                title:
+                    "What I Built",
+
+                text:
+                    "I architected and shipped the RFx Toolkit and owned the complete system lifecycle, from data model to production release.",
+
+                bullets: [
+                    "Modeled the data in SAP HANA.",
+
+                    "Built the backend services on the SAP Cloud Application Programming Model.",
+
+                    "Integrated LLM-powered summarization and semantic analysis to support automated RFP evaluation.",
+
+                    "Handled secure cloud deployment on SAP BTP and the production release."
+                ]
+            },
+
+            {
+                title:
+                    "Impact",
+
+                text:
+                    "Centralizing the process and automating the first pass of evaluation changed how long a response takes.",
+
+                metrics: [
+                    {
+                        value:
+                            "~75%",
+
+                        label:
+                            "Faster RFP turnaround"
+                    }
+                ]
+            }
+        ]
+    },
+
+
+    portfolio: {
+        theme:
+            "portfolio",
+
+        eyebrow:
+            "Design & Front-End Development",
+
+        title:
+            "This Portfolio",
+
+        description:
+            "The site you are on right now: designed and hand-built without a framework, so every interaction reflects a decision I made.",
+
+        role:
+            "Designer & Developer",
+
+        timeline:
+            "2026",
+
+        team:
+            "Solo project",
+
+        tags: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Accessibility",
+            "Responsive Design",
+            "Interaction Design"
+        ],
+
+        images: [],
+
+        sections: [
+            {
+                title:
+                    "The Idea",
+
+                text:
+                    "I wanted a portfolio that felt like me rather than a template: warm colors, bold type and small moments of play, while still being quick to scan for someone who only has a minute."
+            },
+
+            {
+                title:
+                    "Design Decisions",
+
+                bullets: [
+                    "Every workplace and project card is illustrated with CSS instead of stock imagery, so each one carries its own personality.",
+
+                    "A bold display typeface paired with a quiet sans-serif keeps headlines expressive and body text readable.",
+
+                    "Case studies open in place, so visitors never lose their spot on the page.",
+
+                    "Motion is subtle and turns off for anyone who prefers reduced motion."
+                ]
+            },
+
+            {
+                title:
+                    "Built for Everyone",
+
+                text:
+                    "Dialogs trap focus and close with Escape, controls are real buttons, and layouts adapt from wide screens down to small phones."
+            }
+        ]
     }
 };
 /* =========================================
@@ -1637,6 +1786,9 @@ const buildProjectGallery = (
     }
 
     projectModalGallery.innerHTML = "";
+
+    projectModalGallery.hidden =
+        !images.length;
 
     images.forEach(
         (image) => {
@@ -1840,19 +1992,24 @@ const buildProjectSections = (
                 section.title;
 
 
-            const paragraph =
-                document.createElement(
-                    "p"
-                );
-
-            paragraph.textContent =
-                section.text;
-
-
-            content.append(
-                heading,
-                paragraph
+            content.appendChild(
+                heading
             );
+
+
+            if (section.text) {
+                const paragraph =
+                    document.createElement(
+                        "p"
+                    );
+
+                paragraph.textContent =
+                    section.text;
+
+                content.appendChild(
+                    paragraph
+                );
+            }
 
 
             if (

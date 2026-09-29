@@ -89,6 +89,11 @@ body.modal-open {
     overflow: hidden;
 }
 
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
 ::selection {
     background: var(--yellow);
     color: var(--copper-dark);
@@ -307,7 +312,6 @@ body.modal-open {
     --y: -1.5rem;
 
     z-index: 10;
-    outline: none;
 
     box-shadow:
         0 2rem 3.4rem rgba(48, 34, 25, 0.2),
@@ -481,7 +485,8 @@ body.modal-open {
 }
 
 .experience-track:focus-visible {
-    outline: none;
+    outline: 2px solid var(--ink);
+    outline-offset: -6px;
 }
 
 
@@ -546,8 +551,6 @@ body.modal-open {
     transform:
         rotate(0deg)
         translateY(-1.25rem);
-
-    outline: none;
 }
 
 .experience-card__art {
@@ -1554,7 +1557,6 @@ body.modal-open {
 .project-poster:focus-visible {
     transform: rotate(0deg) translateY(-1rem) scale(1.01);
     box-shadow: 0 3rem 5rem rgba(37, 33, 30, 0.22);
-    outline: none;
 }
 
 .featured-project--way2go .project-poster { --poster-rotation: -2deg; }
@@ -1647,7 +1649,7 @@ body.modal-open {
 .small-project:nth-child(4) .small-project__button { --small-rotation: 2.5deg; }
 .small-project:nth-child(5) .small-project__button { --small-rotation: -2deg; }
 .small-project__button:not(.small-project__button--static):hover,
-.small-project__button:not(.small-project__button--static):focus-visible { transform: rotate(0deg) translateY(-0.8rem); outline: none; }
+.small-project__button:not(.small-project__button--static):focus-visible { transform: rotate(0deg) translateY(-0.8rem); }
 
 .small-project__art {
     position: relative; aspect-ratio: 0.94; overflow: hidden; padding: 1.25rem; border-radius: 0.7rem;
@@ -1887,8 +1889,7 @@ body.modal-open {
 
 
     .projects-intro__grid,
-    .more-projects__heading,
-    .project-modal__body {
+    .more-projects__heading {
         grid-template-columns: 1fr;
     }
 
@@ -2042,24 +2043,6 @@ body.modal-open {
         transform: none;
     }
 
-    .project-modal {
-        padding: 0;
-    }
-
-    .project-modal__panel {
-        width: 100vw;
-        max-height: 100svh;
-        border-radius: 0;
-    }
-
-    .project-modal__hero {
-        padding-top: 7rem;
-        min-height: auto;
-    }
-
-    .project-modal__hero h2 {
-        font-size: clamp(4.5rem, 22vw, 8rem);
-    }
 
 }
 
@@ -2210,8 +2193,6 @@ body.modal-open {
     background: var(--ink);
     color: var(--white);
 
-    outline: none;
-
     transform: rotate(90deg);
 }
 
@@ -2269,6 +2250,10 @@ body.modal-open {
 /* =========================================
    PROJECT IMAGE GALLERY
 ========================================= */
+
+.project-modal__gallery[hidden] {
+    display: none;
+}
 
 .project-modal__gallery {
     display: grid;
@@ -2499,4 +2484,53 @@ body.modal-open {
     font-family: var(--display-font);
     font-size: clamp(2.8rem, 4vw, 4rem);
     line-height: 1;
+}
+
+
+/* =========================================
+   PROJECT MODAL — RESPONSIVE
+   (kept after the base modal rules so it wins the cascade)
+========================================= */
+
+@media (max-width: 900px) {
+
+    .project-modal__body {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 620px) {
+
+    .project-modal {
+        padding: 0;
+    }
+
+    .project-modal__panel {
+        height: 100svh;
+        border-radius: 0;
+    }
+
+    .project-modal__header h2 {
+        font-size: clamp(3.6rem, 18vw, 6rem);
+    }
+
+    .project-modal__gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery-item,
+    .project-gallery-item--wide {
+        min-height: 0;
+    }
+
+    .project-gallery-item img {
+        padding: 0.6rem;
+    }
+
+    .project-case-section {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
 }
