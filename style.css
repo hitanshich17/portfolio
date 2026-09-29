@@ -198,6 +198,7 @@ body.modal-open {
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    white-space: nowrap;
 
     transition:
         background 180ms ease,
@@ -239,7 +240,7 @@ body.modal-open {
     cursor: pointer;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
 
     .site-nav {
         left: 0.75rem;
@@ -263,9 +264,6 @@ body.modal-open {
         display: block;
     }
 
-    .hero {
-        padding-top: 5.5rem;
-    }
 
     .site-nav__links {
         display: none;
@@ -3469,6 +3467,20 @@ section[id] {
     .project-case-section {
         grid-template-columns: 1fr;
         gap: 0.75rem;
+    }
+
+}
+
+
+/* =========================================
+   HERO — ROOM FOR THE NAV
+   (kept last so it beats the base .hero padding)
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .hero {
+        padding-top: 5.5rem;
     }
 
 }

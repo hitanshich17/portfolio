@@ -4,7 +4,7 @@
 ========================================= */
 
 const CONTACT_LINKS = {
-    email: "hitanshi.chhabria@gmail.com",
+    email: "hitanshichhabria17@gmail.com",
 
     // Google Calendar → Appointment schedule → Share → Website embed.
     // Paste the iframe's src here, e.g.
@@ -16,7 +16,7 @@ const CONTACT_LINKS = {
     github: "https://github.com/hitanshich17",
 
     // e.g. "files/Hitanshi-Chhabria-Resume.pdf"
-    resume: ""
+    resume: "files/Hitanshi-Chhabria-Resume.pdf"
 };
 
 
@@ -477,6 +477,11 @@ const siteNavLinks = [
     ...document.querySelectorAll(".site-nav__links a")
 ];
 
+const siteNavSectionLinks =
+    siteNavLinks.filter((link) =>
+        link.getAttribute("href").startsWith("#")
+    );
+
 
 const setNavOpen = (isOpen) => {
     siteNav?.classList.toggle("is-open", isOpen);
@@ -548,7 +553,7 @@ if ("IntersectionObserver" in window) {
                         return;
                     }
 
-                    siteNavLinks.forEach((link) => {
+                    siteNavSectionLinks.forEach((link) => {
                         link.classList.toggle(
                             "is-active",
                             link.getAttribute("href") ===
@@ -562,7 +567,7 @@ if ("IntersectionObserver" in window) {
             }
         );
 
-    siteNavLinks.forEach((link) => {
+    siteNavSectionLinks.forEach((link) => {
         const section =
             document.querySelector(
                 link.getAttribute("href")
@@ -1452,7 +1457,7 @@ const projectCaseStudies = {
                 metrics: [
                     {
                         value:
-                            "89%",
+                            "83%",
 
                         label:
                             "Model accuracy"
@@ -1460,7 +1465,7 @@ const projectCaseStudies = {
 
                     {
                         value:
-                            "83%",
+                            "0.89",
 
                         label:
                             "AUC-ROC score"
