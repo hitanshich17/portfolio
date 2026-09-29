@@ -1,4 +1,26 @@
 /* =========================================
+   CONTACT LINKS — edit these
+   Leave a value empty ("") to hide that link.
+========================================= */
+
+const CONTACT_LINKS = {
+    email: "hitanshi.chhabria@gmail.com",
+
+    // Google Calendar → Appointment schedule → Share → Website embed.
+    // Paste the iframe's src here, e.g.
+    // "https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true"
+    calendar: "",
+
+    linkedin: "",
+
+    github: "https://github.com/hitanshich17",
+
+    // e.g. "files/Hitanshi-Chhabria-Resume.pdf"
+    resume: ""
+};
+
+
+/* =========================================
    ELEMENTS
 ========================================= */
 
@@ -429,6 +451,118 @@ if (
             });
         }
     );
+}
+
+
+/* =========================================
+   SITE NAVIGATION
+========================================= */
+
+const siteNav =
+    document.querySelector(".site-nav");
+
+const siteNavToggle =
+    document.querySelector(".site-nav__toggle");
+
+const siteNavLinks = [
+    ...document.querySelectorAll(".site-nav__links a")
+];
+
+
+const setNavOpen = (isOpen) => {
+    siteNav?.classList.toggle("is-open", isOpen);
+
+    siteNavToggle?.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+    if (siteNavToggle) {
+        siteNavToggle.textContent =
+            isOpen ? "Close" : "Menu";
+    }
+};
+
+
+siteNavToggle?.addEventListener(
+    "click",
+    () => {
+        setNavOpen(
+            !siteNav.classList.contains("is-open")
+        );
+    }
+);
+
+
+siteNavLinks.forEach((link) => {
+    link.addEventListener(
+        "click",
+        () => setNavOpen(false)
+    );
+});
+
+
+// Hide the nav while scrolling down, bring it back when scrolling up.
+let lastScrollY = window.scrollY;
+
+window.addEventListener(
+    "scroll",
+    () => {
+        const currentScrollY = window.scrollY;
+
+        const scrollingDown =
+            currentScrollY > lastScrollY &&
+            currentScrollY > 400;
+
+        if (!siteNav?.classList.contains("is-open")) {
+            siteNav?.classList.toggle(
+                "is-hidden",
+                scrollingDown
+            );
+        }
+
+        lastScrollY = currentScrollY;
+    },
+    {
+        passive: true
+    }
+);
+
+
+// Highlight the section currently on screen.
+if ("IntersectionObserver" in window) {
+    const sectionObserver =
+        new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    siteNavLinks.forEach((link) => {
+                        link.classList.toggle(
+                            "is-active",
+                            link.getAttribute("href") ===
+                                `#${entry.target.id}`
+                        );
+                    });
+                });
+            },
+            {
+                rootMargin: "-45% 0px -50% 0px"
+            }
+        );
+
+    siteNavLinks.forEach((link) => {
+        const section =
+            document.querySelector(
+                link.getAttribute("href")
+            );
+
+        if (section) {
+            sectionObserver.observe(section);
+        }
+    });
 }
 
 
@@ -907,6 +1041,18 @@ experienceCards.forEach(
         );
     }
 );
+
+
+document
+    .querySelectorAll("[data-experience-open]")
+    .forEach((button) => {
+        button.addEventListener(
+            "click",
+            () => openModal(
+                button.dataset.experienceOpen
+            )
+        );
+    });
 
 
 /* =========================================
@@ -2320,5 +2466,114 @@ projectModal?.addEventListener(
             event.preventDefault();
             firstElement.focus();
         }
+    }
+);
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+document
+    .querySelectorAll("[data-contact]")
+    .forEach((item) => {
+        const url =
+            CONTACT_LINKS[item.dataset.contact];
+
+        const link =
+            item.querySelector("a");
+
+        if (!url || !link) {
+            item.hidden = true;
+            return;
+        }
+
+        link.href = url;
+    });
+
+
+const calendarOpenButton =
+    document.querySelector("[data-calendar-open]");
+
+const calendarFallback =
+    document.querySelector("[data-calendar-fallback]");
+
+const calendarFrame =
+    document.querySelector("[data-calendar-frame]");
+
+if (
+    CONTACT_LINKS.calendar &&
+    calendarOpenButton &&
+    calendarFrame
+) {
+    calendarOpenButton.hidden = false;
+
+    if (calendarFallback) {
+        calendarFallback.hidden = true;
+    }
+
+    // The booking iframe only loads when asked for, so it doesn't slow the page down.
+    calendarOpenButton.addEventListener(
+        "click",
+        () => {
+            if (!calendarFrame.firstChild) {
+                const iframe =
+                    document.createElement("iframe");
+
+                iframe.src = CONTACT_LINKS.calendar;
+                iframe.title = "Book a call with Hitanshi";
+                iframe.loading = "lazy";
+
+                calendarFrame.appendChild(iframe);
+            }
+
+            calendarFrame.hidden = false;
+            calendarOpenButton.hidden = true;
+
+            calendarFrame
+                .closest(".contact-card")
+                ?.classList.add("is-expanded");
+        }
+    );
+}
+
+
+const copyEmailButton =
+    document.querySelector("[data-copy-email]");
+
+const copyEmailStatus =
+    document.querySelector(".contact-card__status");
+
+copyEmailButton?.addEventListener(
+    "click",
+    async () => {
+        try {
+            await navigator.clipboard.writeText(
+                CONTACT_LINKS.email
+            );
+
+            copyEmailButton.textContent = "Copied ✓";
+
+            if (copyEmailStatus) {
+                copyEmailStatus.textContent =
+                    "Email copied to your clipboard.";
+            }
+        } catch {
+            if (copyEmailStatus) {
+                copyEmailStatus.textContent =
+                    `Couldn’t copy. My email is ${CONTACT_LINKS.email}`;
+            }
+        }
+
+        window.setTimeout(
+            () => {
+                copyEmailButton.textContent = "Copy email";
+
+                if (copyEmailStatus) {
+                    copyEmailStatus.textContent = "";
+                }
+            },
+            2500
+        );
     }
 );

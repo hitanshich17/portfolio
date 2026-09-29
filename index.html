@@ -33,6 +33,38 @@
 
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
+
+    <!-- =========================================
+         SITE NAVIGATION
+    ========================================== -->
+
+    <nav class="site-nav" aria-label="Main">
+
+        <a class="site-nav__logo" href="#top" aria-label="Hitanshi Chhabria, back to top">
+            HC
+        </a>
+
+        <button
+            class="site-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav-links"
+        >
+            Menu
+        </button>
+
+        <ul class="site-nav__links" id="site-nav-links">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a class="site-nav__cta" href="#contact">Book a call</a></li>
+        </ul>
+
+    </nav>
+
     <!-- Right-side page progress -->
     <div class="page-progress" aria-hidden="true">
         <span class="page-progress__fill"></span>
@@ -142,7 +174,7 @@
 
 
 
-    <main>
+    <main id="main">
 
         <!-- =========================================
              PLACES I'VE WORKED AT
@@ -703,6 +735,82 @@
 
 
         <!-- =========================================
+             IMPACT
+        ========================================== -->
+
+        <section class="impact" id="impact" aria-labelledby="impact-title">
+
+            <p class="eyebrow">Why I build</p>
+
+            <div class="impact__heading">
+                <h2 id="impact-title">
+                    Technology
+                    <br>
+                    that looks
+                    <br>
+                    after people.
+                </h2>
+
+                <p>
+                    The work I am proudest of is not always the most
+                    technical. It is the work where someone learned,
+                    felt included or got home a little safer.
+                </p>
+            </div>
+
+
+            <div class="impact__grid">
+
+                <article class="impact-card impact-card--learning">
+                    <p class="impact-card__label">Education</p>
+                    <p class="impact-card__stat">100+</p>
+                    <h3>Students tutored</h3>
+                    <p>
+                        Calculus, statistics, linear algebra and discrete
+                        math at Drexel’s Math Resource Center. More than 80%
+                        of the students I supported improved by at least
+                        one letter grade.
+                    </p>
+                    <button class="impact-card__link" type="button" data-experience-open="mrc">
+                        See the role <span aria-hidden="true">↗</span>
+                    </button>
+                </article>
+
+                <article class="impact-card impact-card--inclusion">
+                    <p class="impact-card__label">Inclusion</p>
+                    <p class="impact-card__stat">2.5 yrs</p>
+                    <h3>Mentoring neurodiverse students</h3>
+                    <p>
+                        Consistent, one-on-one support at the Center for
+                        Autism &amp; Neurodiversity, and events that helped
+                        Neurodragons members feel part of campus life.
+                    </p>
+                    <button class="impact-card__link" type="button" data-experience-open="can">
+                        See the role <span aria-hidden="true">↗</span>
+                    </button>
+                </article>
+
+                <article class="impact-card impact-card--safety">
+                    <p class="impact-card__label">Public safety</p>
+                    <p class="impact-card__stat">2–4</p>
+                    <h3>Risky segments avoided per trip</h3>
+                    <p>
+                        Way2Go uses Philadelphia crime data to suggest safer
+                        walking routes, designed to inform without creating
+                        fear or reinforcing harmful assumptions.
+                    </p>
+                    <button class="impact-card__link" type="button" data-project="way2go">
+                        Read the case study <span aria-hidden="true">↗</span>
+                    </button>
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
              ABOUT
         ========================================== -->
 
@@ -771,6 +879,68 @@
             >
                 Let’s talk.
             </a>
+
+
+            <div class="contact__grid">
+
+                <div class="contact-card contact-card--calendar">
+                    <p class="contact-card__label">Book a call</p>
+
+                    <p class="contact-card__text">
+                        Pick a time that works for you. Coffee chats, roles,
+                        collaborations or just questions about my work.
+                    </p>
+
+                    <button class="contact-card__button" type="button" data-calendar-open hidden>
+                        See available times <span aria-hidden="true">↗</span>
+                    </button>
+
+                    <a class="contact-card__button" href="mailto:hitanshi.chhabria@gmail.com?subject=Let%E2%80%99s%20find%20a%20time" data-calendar-fallback>
+                        Email me to find a time <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <div class="contact-card__calendar" data-calendar-frame hidden></div>
+                </div>
+
+
+                <div class="contact-card">
+                    <p class="contact-card__label">Email</p>
+
+                    <p class="contact-card__text contact-card__email">
+                        hitanshi.chhabria@gmail.com
+                    </p>
+
+                    <div class="contact-card__actions">
+                        <button class="contact-card__button" type="button" data-copy-email>
+                            Copy email
+                        </button>
+
+                        <a class="contact-card__button contact-card__button--quiet" href="mailto:hitanshi.chhabria@gmail.com">
+                            Open mail app
+                        </a>
+                    </div>
+
+                    <p class="contact-card__status" role="status" aria-live="polite"></p>
+                </div>
+
+
+                <div class="contact-card">
+                    <p class="contact-card__label">Elsewhere</p>
+
+                    <ul class="contact-card__links">
+                        <li data-contact="linkedin">
+                            <a target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+                        </li>
+                        <li data-contact="github">
+                            <a target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+                        </li>
+                        <li data-contact="resume">
+                            <a target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
 
 
             <div class="contact__footer">
