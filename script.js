@@ -1321,7 +1321,7 @@ const projectCaseStudies = {
             "way2go",
 
         eyebrow:
-            "Machine Learning · Safety Navigation",
+            "Philly Codefest 2026 · Machine Learning · Civic Safety",
 
         title:
             "Way2Go",
@@ -1333,13 +1333,22 @@ const projectCaseStudies = {
             "Machine Learning Developer · Product Design",
 
         timeline:
-            "2026",
+            "Philly Codefest 2026",
 
         team:
             "Hitanshi Chhabria, Mustafa Bookwala and Armaan Parekh",
 
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/hitanshich17/Way2Go"
+            }
+        ],
+
         tags: [
             "Python",
+            "Next.js",
+            "Google Maps",
             "XGBoost",
             "KDE",
             "Machine Learning",
@@ -1406,6 +1415,8 @@ const projectCaseStudies = {
                     "The model evaluates location and temporal features before generating an aggregated risk score for each route segment.",
 
                 bullets: [
+                    "Trained on roughly 43,000 Philadelphia Police Department crime records.",
+
                     "Uses latitude and longitude data.",
 
                     "Considers time of day and seasonal patterns.",
@@ -1694,6 +1705,212 @@ const projectCaseStudies = {
     },
 
 
+    skinvidhi: {
+        theme:
+            "skinvidhi",
+
+        eyebrow:
+            "In progress · Full-Stack & AI",
+
+        title:
+            "SkinVidhi",
+
+        description:
+            "Answer a one-minute quiz and get a morning and night skincare routine built from products across every brand, within your budget.",
+
+        role:
+            "Designer & Developer",
+
+        timeline:
+            "September 2026 — Present",
+
+        team:
+            "Solo project",
+
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/hitanshich17/skinvidhi"
+            }
+        ],
+
+        tags: [
+            "Java 21",
+            "Spring Boot",
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "pgvector",
+            "Redis",
+            "Docker",
+            "AWS",
+            "Terraform"
+        ],
+
+        images: [],
+
+        sections: [
+            {
+                title:
+                    "The Problem",
+
+                text:
+                    "Skincare brands build routines out of their own product lines. Comparing across brands means reading ingredient lists, prices and sizes one product at a time, which most people simply don't have time for."
+            },
+
+            {
+                title:
+                    "The Idea",
+
+                text:
+                    "SkinVidhi compares them all. A short quiz captures skin type, concerns and budget, and the app assembles a morning and night routine from whichever products fit best, regardless of brand."
+            },
+
+            {
+                title:
+                    "How It's Built",
+
+                text:
+                    "Two services work together behind the quiz, and everything runs locally in Docker.",
+
+                bullets: [
+                    "A Java 21 / Spring Boot core API handles products, ingredients, the quiz, routine rules, replacements and feedback.",
+
+                    "A Python / FastAPI AI service handles label reading, embeddings, explanations and ranking.",
+
+                    "PostgreSQL with pgvector stores products and canonical ingredients and powers similarity search.",
+
+                    "Redis caches repeated lookups; S3 and SQS handle label images and asynchronous scan jobs.",
+
+                    "Production is planned for a single EC2 instance provisioned with Terraform, with CI running Java tests, Python tests and Docker builds."
+                ]
+            },
+
+            {
+                title:
+                    "The Data",
+
+                text:
+                    "Routines are only as good as the ingredient data behind them.",
+
+                bullets: [
+                    "Imports around 20,000 products with ingredient lists from Open Beauty Facts and normalizes them.",
+
+                    "A curated US catalog records every product's full ingredient list, retailer offers, prices and sizes.",
+
+                    "The catalog import rejects the whole batch, listing every problem, if any row is invalid."
+                ]
+            },
+
+            {
+                title:
+                    "Where It's At",
+
+                text:
+                    "The foundation, ingredient pipeline and US product catalog are done. Next up are the quiz and routine rules engine, replacements and feedback, AI label reading, and the front end."
+            },
+
+            {
+                title:
+                    "Designing Responsibly",
+
+                text:
+                    "Skin is personal, and a routine builder shouldn't pretend to be a doctor. SkinVidhi says up front that it is not medical advice, and that severe or unusual skin problems should be seen by a dermatologist."
+            }
+        ]
+    },
+
+
+    voyago: {
+        theme:
+            "voyago",
+
+        eyebrow:
+            "Course Project · Full-Stack Development",
+
+        title:
+            "Voyago",
+
+        description:
+            "A collaborative travel-planning app where friends can build a trip together: itinerary, stays, transport and conversation in one place.",
+
+        role:
+            "Full-Stack Developer",
+
+        timeline:
+            "Drexel CS 478",
+
+        team:
+            "Three-person team",
+
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/hitanshich17/Voyago"
+            }
+        ],
+
+        tags: [
+            "React",
+            "TypeScript",
+            "Material UI",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Socket.IO",
+            "Google Maps",
+            "Vitest"
+        ],
+
+        images: [],
+
+        sections: [
+            {
+                title:
+                    "The Problem",
+
+                text:
+                    "Planning a group trip usually means a group chat, a shared spreadsheet, a maps tab and a dozen booking links. Decisions get lost and nobody has the full picture."
+            },
+
+            {
+                title:
+                    "What It Does",
+
+                text:
+                    "Voyago keeps the whole trip in one shared space.",
+
+                bullets: [
+                    "Create trips and invite friends, with access controls for who can view and edit.",
+
+                    "Plan accommodation and transport alongside a shared trip calendar.",
+
+                    "See places and routes on an embedded Google Map.",
+
+                    "Chat with your travel group in real time over Socket.IO.",
+
+                    "Connect with friends through user relationships."
+                ]
+            },
+
+            {
+                title:
+                    "How It's Built",
+
+                bullets: [
+                    "React and TypeScript front end built with Vite and Material UI.",
+
+                    "Express 5 and TypeScript back end with a MongoDB database.",
+
+                    "Cookie-based sessions with Argon2 password hashing.",
+
+                    "Back-end tests written with Vitest."
+                ]
+            }
+        ]
+    },
+
+
     rfx: {
         theme:
             "rfx",
@@ -1796,6 +2013,13 @@ const projectCaseStudies = {
 
         team:
             "Solo project",
+
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/hitanshich17/portfolio"
+            }
+        ],
 
         tags: [
             "HTML",
@@ -2007,6 +2231,58 @@ const buildProjectTags = (
 
             projectModalTags.appendChild(
                 tagElement
+            );
+        }
+    );
+};
+
+
+/* =========================================
+   BUILD PROJECT LINKS
+========================================= */
+
+const projectModalLinks =
+    document.querySelector(
+        "#project-modal-links"
+    );
+
+const buildProjectLinks = (
+    links = []
+) => {
+    if (!projectModalLinks) {
+        return;
+    }
+
+    projectModalLinks.innerHTML = "";
+
+    projectModalLinks
+        .closest(".project-meta-group")
+        .hidden = !links.length;
+
+    links.forEach(
+        (link) => {
+            const anchor =
+                document.createElement(
+                    "a"
+                );
+
+            anchor.className =
+                "project-modal__link";
+
+            anchor.href =
+                link.url;
+
+            anchor.target =
+                "_blank";
+
+            anchor.rel =
+                "noopener";
+
+            anchor.textContent =
+                `${link.label} ↗`;
+
+            projectModalLinks.appendChild(
+                anchor
             );
         }
     );
@@ -2262,6 +2538,10 @@ const populateProjectModal = (
 
     buildProjectTags(
         project.tags
+    );
+
+    buildProjectLinks(
+        project.links
     );
 
     buildProjectSections(

@@ -191,6 +191,14 @@
                 thoughtful digital experiences.
             </p>
 
+
+            <button class="hero__now" type="button" data-project="skinvidhi">
+                <span class="hero__now-dot" aria-hidden="true"></span>
+                <span class="hero__now-label">Currently</span>
+                building SkinVidhi<span class="hero__now-detail">, a skincare routine builder that compares every brand</span>
+                <span aria-hidden="true">↗</span>
+            </button>
+
         </div>
 
 
@@ -566,6 +574,85 @@
 
 
         <!-- =========================================
+             TESTIMONIAL
+        ========================================== -->
+
+        <section class="testimonial" aria-labelledby="testimonial-title">
+
+            <p class="eyebrow" id="testimonial-title">In their words</p>
+
+            <figure class="testimonial__figure">
+
+                <blockquote class="testimonial__quote">
+                    <p>
+                        “Hitanshi is one of those rare talents who learn fast,
+                        adapt instantly, deliver in new areas, and exceed
+                        expectations.”
+                    </p>
+                </blockquote>
+
+                <figcaption class="testimonial__source">
+                    <span class="testimonial__avatar" aria-hidden="true">SL</span>
+                    <span>
+                        <strong>Sébastien Le Corguillé</strong>
+                        IT Manager at SAP · managed Hitanshi directly
+                    </span>
+                </figcaption>
+
+                <div class="testimonial__body">
+                    <p>
+                        “She quickly became one of the most appreciated members
+                        of the group… well organized, proactive, full of great
+                        suggestions, and clearly the strongest team player of
+                        the group.”
+                    </p>
+                    <p>
+                        “Our development team, composed of senior experts who are
+                        notoriously hard to impress, was amazed by her ability
+                        to grasp a complex topic so quickly and produce such a
+                        professional result.”
+                    </p>
+                    <p class="testimonial__callout">
+                        Her MVP was submitted to an international innovation
+                        competition and finished <strong>4th</strong>.
+                    </p>
+                </div>
+
+                <details class="testimonial__full">
+                    <summary>Read the full recommendation</summary>
+                    <p>
+                        I had the pleasure of having Hitanshi in my team for a
+                        six‑month internship, and she quickly became one of the
+                        most appreciated members of the group. The team was
+                        consistently elogious about her work, and I saw it
+                        myself when I asked four interns to organize a workshop
+                        for us. Hitanshi immediately stood out: well organized,
+                        proactive, full of great suggestions, and clearly the
+                        strongest team player of the group. Seeing her
+                        potential, we gave her a final challenge: work on an
+                        idea that could be used broadly across the organization.
+                        She rapidly learned the SAP landscape and SAP internal
+                        controls, and delivered an MVP that impressed everyone.
+                        Our development team, composed of senior experts who are
+                        notoriously hard to impress, was amazed by her ability
+                        to grasp a complex topic so quickly and produce such a
+                        professional result. Hitanshi is one of those rare
+                        talents who learn fast, adapt instantly, deliver in new
+                        areas, and exceed expectations. And by the way, her
+                        product was submitted to an international innovation
+                        competition and finished in 4th place. Not bad, isn’t
+                        it.
+                    </p>
+                    <p class="testimonial__meta">LinkedIn recommendation · August 22, 2026</p>
+                </details>
+
+            </figure>
+
+        </section>
+
+
+
+        <!-- =========================================
              PROJECTS
         ========================================== -->
 
@@ -615,6 +702,11 @@
                     <span class="poster-orbit poster-orbit--one"></span>
                     <span class="poster-orbit poster-orbit--two"></span>
                     <span class="poster-stat">&lt;500MS</span>
+                    <span class="poster-shots poster-shots--phones" aria-hidden="true">
+                        <img src="images/projects/race-walking/device-screen.png" alt="" loading="lazy">
+                        <img src="images/projects/race-walking/tracking-screen.png" alt="" loading="lazy">
+                        <img src="images/projects/race-walking/sessions-screen.png" alt="" loading="lazy">
+                    </span>
                     <span class="poster-footer">ANDROID · BLE · GPS</span>
                 </button>
             </article>
@@ -627,6 +719,10 @@
                     <span class="poster-map" aria-hidden="true"></span>
                     <span class="poster-title">WAY<br>2GO</span>
                     <span class="poster-stat">89%</span>
+                    <span class="poster-shots poster-shots--windows" aria-hidden="true">
+                        <img src="images/projects/way2go/way2go-home.png" alt="" loading="lazy">
+                        <img src="images/projects/way2go/way2go-model.png" alt="" loading="lazy">
+                    </span>
                     <span class="poster-footer">XGBOOST · KDE · AI ROUTING</span>
                 </button>
 
@@ -646,6 +742,9 @@
                     >
                         View case study <span aria-hidden="true">↗</span>
                     </button>
+                    <a class="project-code-link" href="https://github.com/hitanshich17/Way2Go" target="_blank" rel="noopener">
+                        Code on GitHub <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
             </article>
 
@@ -672,6 +771,10 @@
                     <span class="poster-card poster-card--two"></span>
                     <span class="poster-title">CARD<br>WISE</span>
                     <span class="poster-stat">5X</span>
+                    <span class="poster-shots poster-shots--windows" aria-hidden="true">
+                        <img src="images/projects/cardwise/global-ranking.png" alt="" loading="lazy">
+                        <img src="images/projects/cardwise/dashboard.png" alt="" loading="lazy">
+                    </span>
                     <span class="poster-footer">NEXT.JS · REACT · NODE</span>
                 </button>
             </article>
@@ -690,9 +793,24 @@
             </div>
 
             <div class="more-projects__grid">
+                <article class="small-project small-project--skinvidhi">
+                    <button class="small-project__button" type="button" data-project="skinvidhi">
+                        <div class="small-project__art">
+                            <span class="small-project__stamp">IN PROGRESS</span>
+                            <span class="skin-drop skin-drop--one" aria-hidden="true"></span>
+                            <span class="skin-drop skin-drop--two" aria-hidden="true"></span>
+                            <strong>SKIN<br>VIDHI</strong>
+                            <span class="small-project__code">AM · PM · ANY BRAND</span>
+                        </div>
+                        <div class="small-project__meta">
+                            <div><h3>SkinVidhi</h3><p>Designer &amp; Developer</p></div>
+                            <span>View ↗</span>
+                        </div>
+                    </button>
+                </article>
+
                 <article class="small-project small-project--voyago">
-                    <!-- TODO: add a "voyago" entry to projectCaseStudies in script.js, then turn this back into a button with data-project="voyago". -->
-                    <div class="small-project__button small-project__button--static">
+                    <button class="small-project__button" type="button" data-project="voyago">
                         <div class="small-project__art">
                             <span class="small-project__stamp">BOARDING</span>
                             <strong>VOYAGO</strong>
@@ -700,9 +818,9 @@
                         </div>
                         <div class="small-project__meta">
                             <div><h3>Voyago</h3><p>Full-Stack Developer</p></div>
-                            <span>Case study soon</span>
+                            <span>View ↗</span>
                         </div>
-                    </div>
+                    </button>
                 </article>
 
                 <article class="small-project small-project--plant">
@@ -1216,6 +1334,17 @@
                     <div
                         class="project-modal__tags"
                         id="project-modal-tags"
+                    ></div>
+                </div>
+
+                <div class="project-meta-group" hidden>
+                    <p class="project-meta-group__label">
+                        Links
+                    </p>
+
+                    <div
+                        class="project-modal__links"
+                        id="project-modal-links"
                     ></div>
                 </div>
 
