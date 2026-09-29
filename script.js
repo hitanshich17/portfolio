@@ -11,7 +11,7 @@ const CONTACT_LINKS = {
     // "https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true"
     calendar: "",
 
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/hitanshichhabria/",
 
     github: "https://github.com/hitanshich17",
 
@@ -79,49 +79,56 @@ const experienceData = {
 
         location: "Newtown Square, PA",
 
-        headline: "Full-Stack Software Engineer",
+        headline: "Full-Stack Engineer",
 
         dates: "April 2025 — March 2026",
 
         type: "Software Engineering",
 
         introduction:
-            "At SAP, I worked across product design, software development, testing and cloud deployment. I helped transform fragmented enterprise processes into more centralized, usable and intelligent tools.",
+            "At SAP, I worked across product design, software development, testing and cloud deployment in Client Service Management. I turned fragmented, manual enterprise processes into centralized, usable and intelligent tools.",
 
         roles: [
             {
-                title: "Full-Stack Software Engineer",
+                title: "Full-Stack Engineer",
                 dates: "Oct 2025 — Mar 2026"
             },
             {
-                title: "Software Developer & Tester",
+                title: "Software Engineer, Quality Assurance",
                 dates: "Apr 2025 — Sep 2025"
             }
         ],
 
         highlights: [
-            "Architected and shipped the RFx Toolkit, a CAP application on SAP BTP that reduced RFP turnaround time by approximately 75%.",
+            "Owned the full lifecycle of the RFx Toolkit: a JavaScript/XML front end backed by SAP HANA spanning 7 core workflows, replacing a manual spreadsheet-and-email process.",
 
-            "Delivered the complete system lifecycle, including SAP HANA data modeling, backend services, secure cloud deployment and production release.",
+            "Led the migration of a low-code RFP process to a custom SAP BTP application, adopted by 4 divisions and saving $7K a year in third-party licensing.",
 
-            "Integrated LLM-powered summarization and semantic analysis into the backend to support automated RFP evaluation.",
+            "Engineered a RAG pipeline over 70+ page RFP documents (OpenAI ADA-002 embeddings, cosine-similarity search, purpose-built CDS views) behind a chatbot that cut document review time 75% and query load times 50% for 25+ concurrent users.",
 
-            "Engineered contract-linking and cloning workflows in Power Apps, reducing contract creation time by approximately 40%.",
+            "Deployed and demoed the toolkit to production, partnering with leadership on product decisions to secure company-wide rollout.",
 
-            "Diagnosed a production data-loss issue caused by Power Apps delegation limits and restored data integrity for an application serving more than 500 users."
+            "Built an onboarding module in Procurator that made new team-member ramp-up 13x faster, replacing a 6-touchpoint manual process.",
+
+            "Shipped 31 features for CMM, a client-management platform, including a contract-linking tool that made contract generation 40% faster.",
+
+            "Traced a legacy production save-failure to inconsistent variable naming and restored service for 500+ users within 5 hours.",
+
+            "Wrote a Python automation bot on Tricentis Tosca for weekly SAP Ariba regression testing, removing around 500 hours a year of manual QA."
         ],
 
         tags: [
             "JavaScript",
             "SAP BTP",
             "SAP HANA",
-            "CAP",
-            "Power Apps",
-            "Power Automate",
-            "JUnit",
-            "LLM Integration",
-            "Cloud Deployment",
-            "Full-Stack Development"
+            "CDS",
+            "RAG",
+            "OpenAI Embeddings",
+            "Vector Search",
+            "Python",
+            "Tricentis Tosca",
+            "SAP Ariba",
+            "Cloud Deployment"
         ]
     },
 
@@ -154,9 +161,9 @@ const experienceData = {
         highlights: [
             "Designed interactive Power BI dashboards using DAX and parameterized templates, reducing ad-hoc reporting requests by approximately 35%.",
 
-            "Automated monthly report generation with Power Automate, cutting processing time by approximately 50%.",
+            "Automated the monthly operations reporting run with Bash, Python and Power Automate, halving report turnaround.",
 
-            "Built Python and PowerShell scripts to parse and structure raw SAP SuccessFactors information.",
+            "Wrote Python scripts on Unix/Linux to parse raw enterprise data exports into clean tables for the dashboards, halving prep time.",
 
             "Created reusable reporting systems that made training and employee data easier for internal teams to understand and maintain."
         ],
@@ -166,6 +173,8 @@ const experienceData = {
             "DAX",
             "Power Automate",
             "Python",
+            "Bash",
+            "Unix/Linux",
             "PowerShell",
             "SAP SuccessFactors",
             "Data Visualization",
@@ -256,7 +265,7 @@ const experienceData = {
 
             "Co-developed Calculus I learning materials with faculty members.",
 
-            "Proactively organized peer study sessions and helped students develop stronger problem-solving habits.",
+            "Led 30+ peer study sessions and helped students develop stronger problem-solving habits.",
 
             "More than 80% of supported students improved by at least one letter grade."
         ],
@@ -304,7 +313,7 @@ const experienceData = {
 
             "Managed regular check-ins and helped students identify practical strategies for navigating university life.",
 
-            "Designed engaging events that encouraged Neurodragons members to participate in the wider campus community.",
+            "Organized 7 campus events that helped Neurodragons members build community and belonging across campus.",
 
             "Focused on trust, patience, consistency and meeting students where they were."
         ],
@@ -1154,13 +1163,13 @@ const projectCaseStudies = {
         theme: "racewalking",
 
         eyebrow:
-            "Senior Design Project · Android Development",
+            "Senior Design · Humanitarian Award Winner",
 
         title:
             "Race Walking Android App",
 
         description:
-            "An Android application that transforms live data from wearable RWECS sensors into clear, real-time feedback for race-walking athletes.",
+            "An Android app that turns live data from wearable RWECS shoe sensors into real-time form feedback for race walkers. It won a Humanitarian Award and is published on the Google Play Store for coaches and athletes to use in live competition.",
 
         role:
             "Android Developer · UI Implementation · BLE Integration",
@@ -1239,7 +1248,9 @@ const projectCaseStudies = {
 
                     "Tracks duration, distance and training-session information.",
 
-                    "Stores past sessions so athletes can review their performance."
+                    "Stores past sessions so athletes can review their performance.",
+
+                    "Published on the Google Play Store for coaches and athletes to use in live competition."
                 ]
             },
 
@@ -1541,7 +1552,7 @@ const projectCaseStudies = {
             "Full-Stack Developer · Product Design",
 
         timeline:
-            "2025",
+            "September — December 2025",
 
         team:
             "Team project",
@@ -1549,9 +1560,11 @@ const projectCaseStudies = {
         tags: [
             "React",
             "TypeScript",
-            "Next.js",
             "Node.js",
-            "Authentication",
+            "Express",
+            "MongoDB",
+            "REST API",
+            "Vercel",
             "Recommendation Logic",
             "Responsive Design",
             "Fintech"
@@ -1691,6 +1704,40 @@ const projectCaseStudies = {
                     "Created personalized recommendation and ranking behavior.",
 
                     "Designed interfaces that communicate detailed financial comparisons without making the experience feel overly technical."
+                ]
+            },
+
+            {
+                title:
+                    "Results",
+
+                text:
+                    "Built on a React/TypeScript front end and a Node.js/Express REST API with MongoDB, deployed on Vercel and tested with 15+ users.",
+
+                metrics: [
+                    {
+                        value:
+                            "50–60",
+
+                        label:
+                            "Cards and their category rules"
+                    },
+
+                    {
+                        value:
+                            "88%",
+
+                        label:
+                            "Recommendation accuracy"
+                    },
+
+                    {
+                        value:
+                            "<1s",
+
+                        label:
+                            "To answer which card to use"
+                    }
                 ]
             },
 
@@ -1922,10 +1969,10 @@ const projectCaseStudies = {
             "RFx Toolkit",
 
         description:
-            "A CAP application on SAP BTP that brings the request-for-proposal process into one place and uses LLM-powered analysis to speed up evaluation.",
+            "An SAP BTP application that brings the request-for-proposal process into one place, with a RAG-powered chatbot that reads 70+ page RFPs so people don't have to.",
 
         role:
-            "Full-Stack Software Engineer",
+            "Full-Stack Engineer",
 
         timeline:
             "October 2025 — March 2026",
@@ -1938,7 +1985,9 @@ const projectCaseStudies = {
             "CAP",
             "SAP HANA",
             "JavaScript",
-            "LLM Integration",
+            "RAG",
+            "OpenAI ADA-002",
+            "Vector Search",
             "Cloud Deployment"
         ],
 
@@ -1950,7 +1999,7 @@ const projectCaseStudies = {
                     "The Problem",
 
                 text:
-                    "Responding to requests for proposals meant working across fragmented documents and manual processes. Each response took significant time to assemble and evaluate."
+                    "Responding to requests for proposals ran on spreadsheets, email and a low-code app with serious scalability and workflow gaps, plus a recurring third-party license. Reviewing a single 70+ page RFP took a long time."
             },
 
             {
@@ -1961,13 +2010,13 @@ const projectCaseStudies = {
                     "I architected and shipped the RFx Toolkit and owned the complete system lifecycle, from data model to production release.",
 
                 bullets: [
-                    "Modeled the data in SAP HANA.",
+                    "Researched the existing low-code process and identified its scalability and workflow gaps.",
 
-                    "Built the backend services on the SAP Cloud Application Programming Model.",
+                    "Architected a JavaScript/XML front end backed by SAP HANA covering 7 core workflows.",
 
-                    "Integrated LLM-powered summarization and semantic analysis to support automated RFP evaluation.",
+                    "Engineered a RAG pipeline that chunks and embeds RFP documents with OpenAI ADA-002 and retrieves them through cosine-similarity vector search and purpose-built CDS views.",
 
-                    "Handled secure cloud deployment on SAP BTP and the production release."
+                    "Deployed to production on SAP BTP and demoed it to leadership, partnering on product decisions to secure company-wide approval and rollout."
                 ]
             },
 
@@ -1976,15 +2025,39 @@ const projectCaseStudies = {
                     "Impact",
 
                 text:
-                    "Centralizing the process and automating the first pass of evaluation changed how long a response takes.",
+                    "The toolkit was adopted by 4 divisions and replaced a paid third-party app.",
 
                 metrics: [
                     {
                         value:
-                            "~75%",
+                            "75%",
 
                         label:
-                            "Faster RFP turnaround"
+                            "Less document review time"
+                    },
+
+                    {
+                        value:
+                            "50%",
+
+                        label:
+                            "Faster query load times"
+                    },
+
+                    {
+                        value:
+                            "4",
+
+                        label:
+                            "Divisions adopted it"
+                    },
+
+                    {
+                        value:
+                            "$7K",
+
+                        label:
+                            "Saved every year"
                     }
                 ]
             }
