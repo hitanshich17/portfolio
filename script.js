@@ -1196,7 +1196,7 @@ const projectCaseStudies = {
         images: [
             {
                 src:
-                    "images/projects/race-walking/device-screen.png",
+                    "images/projects/race-walking/device-screen.webp",
 
                 alt:
                     "Race Walking Android app device connection and start screen",
@@ -1206,7 +1206,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/race-walking/sessions-screen.png",
+                    "images/projects/race-walking/sessions-screen.webp",
 
                 alt:
                     "Race Walking Android app training session history",
@@ -1216,7 +1216,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/race-walking/tracking-screen.png",
+                    "images/projects/race-walking/tracking-screen.webp",
 
                 alt:
                     "Race Walking Android app live Loss of Contact tracking screen",
@@ -1374,7 +1374,7 @@ const projectCaseStudies = {
         images: [
             {
                 src:
-                    "images/projects/way2go/way2go-home.png",
+                    "images/projects/way2go/way2go-home.webp",
 
                 alt:
                     "Way2Go starting point and destination interface",
@@ -1384,7 +1384,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/way2go/way2go-routes.jpg",
+                    "images/projects/way2go/way2go-routes.webp",
 
                 alt:
                     "Way2Go safer route comparison interface",
@@ -1394,7 +1394,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/way2go/way2go-model.png",
+                    "images/projects/way2go/way2go-model.webp",
 
                 alt:
                     "Way2Go machine learning and route risk model visualization",
@@ -1575,7 +1575,7 @@ const projectCaseStudies = {
         images: [
             {
                 src:
-                    "images/projects/cardwise/dashboard.png",
+                    "images/projects/cardwise/dashboard.webp",
 
                 alt:
                     "CardWise dashboard showing planned monthly spending, categories and saved cards",
@@ -1585,7 +1585,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/cardwise/my-cards.png",
+                    "images/projects/cardwise/my-cards.webp",
 
                 alt:
                     "CardWise My Cards page showing the credit cards owned by the user",
@@ -1595,7 +1595,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/cardwise/category-ranking.png",
+                    "images/projects/cardwise/category-ranking.webp",
 
                 alt:
                     "CardWise personalized card recommendations by spending category",
@@ -1605,7 +1605,7 @@ const projectCaseStudies = {
 
             {
                 src:
-                    "images/projects/cardwise/global-ranking.png",
+                    "images/projects/cardwise/global-ranking.webp",
 
                 alt:
                     "CardWise global credit-card ranking filtered by category and cashback rate",
