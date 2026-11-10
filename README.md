@@ -1,6 +1,6 @@
 # hitanshichhabria.in
 
-Personal portfolio of Hitanshi Chhabria — designer & developer.
+Personal portfolio of Hitanshi Chhabria — software engineer with a designer’s eye.
 Plain HTML, CSS and JavaScript. No build step.
 
 ## Run locally

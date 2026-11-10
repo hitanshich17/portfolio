@@ -79,56 +79,58 @@ const experienceData = {
 
         location: "Newtown Square, PA",
 
-        headline: "Full-Stack Engineer",
+        headline: "Full-Stack Software Engineer",
 
         dates: "April 2025 — March 2026",
 
         type: "Software Engineering",
 
         introduction:
-            "At SAP, I worked across product design, software development, testing and cloud deployment in Client Service Management. I turned fragmented, manual enterprise processes into centralized, usable and intelligent tools.",
+            "In Client Service Management at SAP, I moved a manual RFP process onto API-based services on SAP BTP, gave the team's AI assistant typed tools to work with them, and kept the platform fast and reliable for the people using it every day.",
 
         roles: [
             {
-                title: "Full-Stack Engineer",
+                title: "Full-Stack Software Engineer",
                 dates: "Oct 2025 — Mar 2026"
             },
             {
-                title: "Software Engineer, Quality Assurance",
+                title: "Software Engineer",
                 dates: "Apr 2025 — Sep 2025"
             }
         ],
 
         highlights: [
-            "Owned the full lifecycle of the RFx Toolkit: a JavaScript/XML front end backed by SAP HANA spanning 7 core workflows, replacing a manual spreadsheet-and-email process.",
+            "Led the migration of a manual RFP process (spreadsheets, Teams folders and an in-house low-code app) to an API-based SAP BTP service: 7 workflows and $300K+ in yearly RFPs, with Python scripts mapping legacy records into a new data model.",
 
-            "Led the migration of a low-code RFP process to a custom SAP BTP application, adopted by 4 divisions and saving $7K a year in third-party licensing.",
+            "Validated the migration with a 3-week parallel run and user acceptance testing, then cut over in phases across 4 divisions. The sourcing cycle fell from 4–6 months to 1–2.",
 
-            "Engineered a RAG pipeline over 70+ page RFP documents (OpenAI ADA-002 embeddings, cosine-similarity search, purpose-built CDS views) behind a chatbot that cut document review time 75% and query load times 50% for 25+ concurrent users.",
+            "Designed and built 4 Python REST APIs (RFP intake, supplier proposals, review and contract linking) as separate services integrated with SAP Ariba, SharePoint/Azure and other SAP systems, so new workflows plug in without rewrites.",
 
-            "Deployed and demoed the toolkit to production, partnering with leadership on product decisions to secure company-wide rollout.",
+            "Exposed those APIs to the AI assistant as 3 MCP tools, so it can search proposals, create RFPs and link contracts through typed, validated calls instead of hard-coded workflow steps.",
 
-            "Built an onboarding module in Procurator that made new team-member ramp-up 13x faster, replacing a 6-touchpoint manual process.",
+            "Engineered a pipeline that makes 30–40 page supplier proposals searchable on upload, chunking and embedding each PDF so reviewers get answers cited to the exact page. Review time fell 70%.",
 
-            "Shipped 31 features for CMM, a client-management platform, including a contract-linking tool that made contract generation 40% faster.",
+            "Cut API response times 50% for 25+ concurrent users by consolidating repeated queries and caching lookups.",
 
-            "Traced a legacy production save-failure to inconsistent variable naming and restored service for 500+ users within 5 hours.",
+            "Traced a production defect hiding records from 500+ users to inconsistent query logic, escalated the root-cause fix and added regression tests. Access was restored within 5 hours.",
 
-            "Wrote a Python automation bot on Tricentis Tosca for weekly SAP Ariba regression testing, removing around 500 hours a year of manual QA."
+            "Automated weekly SAP Ariba regression testing in Tricentis Tosca, saving 500 manual hours a year, and delivered RFP-to-contract linking in the CMM app, making contract creation 40% faster.",
+
+            "Reviewed 50+ teammate PRs, documented every API and MCP tool, and used Claude Code for scoped tasks, reviewing its output like any other PR."
         ],
 
         tags: [
-            "JavaScript",
+            "Python",
+            "REST APIs",
             "SAP BTP",
-            "SAP HANA",
-            "CDS",
-            "RAG",
+            "SAP Ariba",
+            "MCP",
             "OpenAI Embeddings",
             "Vector Search",
-            "Python",
+            "Microsoft Azure",
+            "SharePoint",
             "Tricentis Tosca",
-            "SAP Ariba",
-            "Cloud Deployment"
+            "Claude Code"
         ]
     },
 
@@ -146,45 +148,40 @@ const experienceData = {
 
         dates: "April 2024 — September 2024",
 
-        type: "Data Analytics & Automation",
+        type: "Data & Integration",
 
         introduction:
-            "At SEPTA, I built reporting and automation systems that helped teams work with large operational datasets more efficiently and reduced dependence on repetitive manual processes.",
+            "On SEPTA's Learning and Development team, I connected HR systems, automated the data prep behind them and gave leaders dashboards they could use without filing a request.",
 
         roles: [
             {
-                title: "Data & Systems Analyst",
+                title: "Data & Systems Analyst · Learning and Development",
                 dates: "Apr 2024 — Sep 2024"
             }
         ],
 
         highlights: [
-            "Designed interactive Power BI dashboards using DAX and parameterized templates, reducing ad-hoc reporting requests by approximately 35%.",
+            "Wrote Python and Bash jobs that sync SuccessFactors API data to Power Automate, with validation and error handling, halving data prep time.",
 
-            "Automated the monthly operations reporting run with Bash, Python and Power Automate, halving report turnaround.",
+            "Rolled out a learning management system with HR that tracks safety training for 3,500+ drivers and staff across 45 courses and flags overdue certifications.",
 
-            "Wrote Python scripts on Unix/Linux to parse raw enterprise data exports into clean tables for the dashboards, halving prep time.",
-
-            "Created reusable reporting systems that made training and employee data easier for internal teams to understand and maintain."
+            "Designed Power BI dashboards on the synced data so leaders could check compliance metrics themselves, cutting ad-hoc report requests 35%."
         ],
 
         tags: [
-            "Power BI",
-            "DAX",
-            "Power Automate",
             "Python",
             "Bash",
-            "Unix/Linux",
-            "PowerShell",
             "SAP SuccessFactors",
-            "Data Visualization",
-            "Process Automation",
-            "SharePoint"
+            "REST APIs",
+            "Power Automate",
+            "Power BI",
+            "Data Validation",
+            "LMS"
         ]
     },
 
     saxbys: {
-    number: "03",
+    number: "05",
 
     theme: "saxbys",
 
@@ -234,7 +231,7 @@ const experienceData = {
 
 
     mrc: {
-        number: "04",
+        number: "03",
 
         theme: "mrc",
 
@@ -242,7 +239,7 @@ const experienceData = {
 
         location: "Drexel University · Philadelphia, PA",
 
-        headline: "Math & Statistics Tutor",
+        headline: "Mathematics Tutor",
 
         dates: "September 2023 — May 2026",
 
@@ -253,7 +250,7 @@ const experienceData = {
 
         roles: [
             {
-                title: "Math & Statistics Tutor",
+                title: "Mathematics Tutor",
                 dates: "Sep 2023 — May 2026"
             }
         ],
@@ -284,7 +281,7 @@ const experienceData = {
 
 
     can: {
-        number: "05",
+        number: "04",
 
         theme: "can",
 
@@ -1762,19 +1759,19 @@ const projectCaseStudies = {
             "skinvidhi",
 
         eyebrow:
-            "In progress · Full-Stack & AI",
+            "In progress · Distributed Systems",
 
         title:
-            "SkinVidhi",
+            "NextToSkin",
 
         description:
-            "Answer a one-minute quiz and get a morning and night skincare routine built from products across every brand, within your budget.",
+            "A skincare recommender that turns a short quiz and your local weather into product picks, built as two event-driven microservices.",
 
         role:
-            "Designer & Developer",
+            "Software Engineer",
 
         timeline:
-            "September 2026 — Present",
+            "August 2026 — Present",
 
         team:
             "Solo project",
@@ -1782,21 +1779,22 @@ const projectCaseStudies = {
         links: [
             {
                 label: "GitHub",
-                url: "https://github.com/hitanshich17/skinvidhi"
+                url: "https://github.com/hitanshich17/NextToSkin"
             }
         ],
 
         tags: [
-            "Java 21",
+            "Java",
             "Spring Boot",
             "Python",
             "FastAPI",
+            "Kafka",
             "PostgreSQL",
-            "pgvector",
             "Redis",
+            "Nginx",
             "Docker",
-            "AWS",
-            "Terraform"
+            "AWS ECS",
+            "Testcontainers"
         ],
 
         images: [],
@@ -1804,62 +1802,73 @@ const projectCaseStudies = {
         sections: [
             {
                 title:
-                    "The Problem",
-
-                text:
-                    "Skincare brands build routines out of their own product lines. Comparing across brands means reading ingredient lists, prices and sizes one product at a time, which most people simply don't have time for."
-            },
-
-            {
-                title:
                     "The Idea",
 
                 text:
-                    "SkinVidhi compares them all. A short quiz captures skin type, concerns and budget, and the app assembles a morning and night routine from whichever products fit best, regardless of brand."
+                    "Skincare advice is usually built around one brand's product line and ignores the weather you actually live in. NextToSkin asks a few questions, checks live weather, and picks products from a catalog of 20,000+."
             },
 
             {
                 title:
-                    "How It's Built",
+                    "Architecture",
 
                 text:
-                    "Two services work together behind the quiz, and everything runs locally in Docker.",
+                    "Two services, each owning its own data, talking through events.",
 
                 bullets: [
-                    "A Java 21 / Spring Boot core API handles products, ingredients, the quiz, routine rules, replacements and feedback.",
+                    "A Spring Boot catalog service owns the 20K+ product catalog, loaded through a validated, deduplicated ingestion pipeline.",
 
-                    "A Python / FastAPI AI service handles label reading, embeddings, explanations and ranking.",
+                    "A FastAPI recommender turns quiz answers and live weather into picks.",
 
-                    "PostgreSQL with pgvector stores products and canonical ingredients and powers similarity search.",
+                    "Catalog changes publish product-updated events to Kafka, keyed by product ID so updates to the same product stay in order.",
 
-                    "Redis caches repeated lookups; S3 and SQS handle label images and asynchronous scan jobs.",
-
-                    "Production is planned for a single EC2 instance provisioned with Terraform, with CI running Java tests, Python tests and Docker builds."
+                    "The recommender consumes them in a consumer group with retries, a dead-letter topic, and versioned, backward-compatible JSON schemas."
                 ]
             },
 
             {
                 title:
-                    "The Data",
+                    "Performance",
 
                 text:
-                    "Routines are only as good as the ingredient data behind them.",
+                    "A Redis cache-aside layer is invalidated by the same catalog events, and 3 recommender instances run behind Nginx.",
 
-                bullets: [
-                    "Imports around 20,000 products with ingredient lists from Open Beauty Facts and normalizes them.",
+                metrics: [
+                    {
+                        value:
+                            "250 → 100 ms",
 
-                    "A curated US catalog records every product's full ingredient list, retailer offers, prices and sizes.",
+                        label:
+                            "p95 latency under load testing"
+                    },
 
-                    "The catalog import rejects the whole batch, listing every problem, if any row is invalid."
+                    {
+                        value:
+                            "3",
+
+                        label:
+                            "Recommender instances behind Nginx"
+                    },
+
+                    {
+                        value:
+                            "20K+",
+
+                        label:
+                            "Products in the catalog"
+                    }
                 ]
             },
 
             {
                 title:
-                    "Where It's At",
+                    "Testing & Tooling",
 
-                text:
-                    "The foundation, ingredient pipeline and US product catalog are done. Next up are the quiz and routine rules engine, replacements and feedback, AI label reading, and the front end."
+                bullets: [
+                    "Every change is gated on PyTest and JUnit suites plus Testcontainers integration tests against real Kafka and PostgreSQL in CI.",
+
+                    "Claude Code is kept to scoped tasks with a CLAUDE.md and permission rules."
+                ]
             },
 
             {
@@ -1867,7 +1876,7 @@ const projectCaseStudies = {
                     "Designing Responsibly",
 
                 text:
-                    "Skin is personal, and a routine builder shouldn't pretend to be a doctor. SkinVidhi says up front that it is not medical advice, and that severe or unusual skin problems should be seen by a dermatologist."
+                    "Skin is personal, and a recommender shouldn't pretend to be a doctor. NextToSkin is clear that it is not medical advice, and that severe or unusual skin problems should be seen by a dermatologist."
             }
         ]
     },
@@ -1878,19 +1887,19 @@ const projectCaseStudies = {
             "voyago",
 
         eyebrow:
-            "Course Project · Full-Stack Development",
+            "Full-Stack · Real-time Collaboration",
 
         title:
             "Voyago",
 
         description:
-            "A collaborative travel-planning app where friends can build a trip together: itinerary, stays, transport and conversation in one place.",
+            "A collaborative trip planner where a group edits the same itinerary live, with flight search, maps and a group chat in one place.",
 
         role:
             "Full-Stack Developer",
 
         timeline:
-            "Drexel CS 478",
+            "January — March 2026",
 
         team:
             "Three-person team",
@@ -1903,15 +1912,15 @@ const projectCaseStudies = {
         ],
 
         tags: [
-            "React",
             "TypeScript",
-            "Material UI",
+            "React",
             "Node.js",
             "Express",
+            "Kafka",
+            "WebSockets",
             "MongoDB",
-            "Socket.IO",
-            "Google Maps",
-            "Vitest"
+            "Redis",
+            "GitHub Actions"
         ],
 
         images: [],
@@ -1927,36 +1936,60 @@ const projectCaseStudies = {
 
             {
                 title:
-                    "What It Does",
+                    "How Live Editing Works",
 
                 text:
-                    "Voyago keeps the whole trip in one shared space.",
+                    "Every edit travels through an event pipeline so everyone on the trip sees the same thing, in the same order.",
 
                 bullets: [
-                    "Create trips and invite friends, with access controls for who can view and edit.",
+                    "Express validates each edit and saves it to MongoDB.",
 
-                    "Plan accommodation and transport alongside a shared trip calendar.",
+                    "A Kafka producer publishes it keyed by trip ID, which keeps every trip's edits in order.",
 
-                    "See places and routes on an embedded Google Map.",
+                    "Consumers push the edit to clients over WebSockets.",
 
-                    "Chat with your travel group in real time over Socket.IO.",
+                    "Two load-balanced WebSocket instances use Redis pub/sub to fan each edit out to every client on that trip."
+                ],
 
-                    "Connect with friends through user relationships."
+                metrics: [
+                    {
+                        value:
+                            "150 ms",
+
+                        label:
+                            "Median edit delivery"
+                    },
+
+                    {
+                        value:
+                            "2",
+
+                        label:
+                            "Load-balanced WebSocket instances"
+                    },
+
+                    {
+                        value:
+                            "4",
+
+                        label:
+                            "Simultaneous editors tested"
+                    }
                 ]
             },
 
             {
                 title:
-                    "How It's Built",
+                    "The Product",
 
                 bullets: [
-                    "React and TypeScript front end built with Vite and Material UI.",
+                    "React and TypeScript front end on Express REST APIs.",
 
-                    "Express 5 and TypeScript back end with a MongoDB database.",
+                    "Flight search through SerpApi and places on an embedded Google Map.",
 
-                    "Cookie-based sessions with Argon2 password hashing.",
+                    "Cookie-based auth and a group chat for every trip.",
 
-                    "Back-end tests written with Vitest."
+                    "GitHub Actions automates builds, pull-request validation and deployment."
                 ]
             }
         ]
@@ -1974,10 +2007,10 @@ const projectCaseStudies = {
             "RFx Toolkit",
 
         description:
-            "An SAP BTP application that brings the request-for-proposal process into one place, with a RAG-powered chatbot that reads 70+ page RFPs so people don't have to.",
+            "The API-based SAP BTP service that replaced a manual RFP process, with an AI assistant that can search 30–40 page supplier proposals and cite the exact page.",
 
         role:
-            "Full-Stack Engineer",
+            "Full-Stack Software Engineer",
 
         timeline:
             "October 2025 — March 2026",
@@ -1986,14 +2019,15 @@ const projectCaseStudies = {
             "SAP America",
 
         tags: [
+            "Python",
+            "REST APIs",
             "SAP BTP",
-            "CAP",
-            "SAP HANA",
-            "JavaScript",
-            "RAG",
-            "OpenAI ADA-002",
+            "SAP Ariba",
+            "MCP",
+            "OpenAI Embeddings",
             "Vector Search",
-            "Cloud Deployment"
+            "Microsoft Azure",
+            "SharePoint"
         ],
 
         images: [],
@@ -2004,25 +2038,30 @@ const projectCaseStudies = {
                     "The Problem",
 
                 text:
-                    "Responding to requests for proposals ran on spreadsheets, email and a low-code app with serious scalability and workflow gaps, plus a recurring third-party license. Reviewing a single 70+ page RFP took a long time."
+                    "Requests for proposals ran on spreadsheets, Teams folders and an in-house low-code app. A sourcing cycle took 4–6 months, and every 30–40 page supplier proposal had to be read by hand."
             },
 
             {
                 title:
                     "What I Built",
 
-                text:
-                    "I architected and shipped the RFx Toolkit and owned the complete system lifecycle, from data model to production release.",
-
                 bullets: [
-                    "Researched the existing low-code process and identified its scalability and workflow gaps.",
+                    "Led the migration to an API-based SAP BTP service covering 7 workflows, writing Python scripts to map legacy records into a new data model.",
 
-                    "Architected a JavaScript/XML front end backed by SAP HANA covering 7 core workflows.",
+                    "Designed 4 Python REST APIs (RFP intake, supplier proposals, review and contract linking) as separate services integrated with SAP Ariba, SharePoint/Azure and other SAP systems.",
 
-                    "Engineered a RAG pipeline that chunks and embeds RFP documents with OpenAI ADA-002 and retrieves them through cosine-similarity vector search and purpose-built CDS views.",
+                    "Exposed those APIs to the AI assistant as 3 MCP tools, so it works through typed, validated calls instead of hard-coded workflow steps.",
 
-                    "Deployed to production on SAP BTP and demoed it to leadership, partnering on product decisions to secure company-wide approval and rollout."
+                    "Built a pipeline that chunks and embeds each proposal on upload, with retries and checks for corrupted or oversized files, so reviewers get answers cited to the exact page."
                 ]
+            },
+
+            {
+                title:
+                    "Rolling It Out",
+
+                text:
+                    "Scoped requirements with the product owner, ran the old and new systems side by side for 3 weeks, finished user acceptance testing, then cut over in phases across 4 divisions."
             },
 
             {
@@ -2030,15 +2069,23 @@ const projectCaseStudies = {
                     "Impact",
 
                 text:
-                    "The toolkit was adopted by 4 divisions and replaced a paid third-party app.",
+                    "Over $300K in yearly RFPs now runs through the service.",
 
                 metrics: [
                     {
                         value:
-                            "75%",
+                            "4–6 → 1–2",
 
                         label:
-                            "Less document review time"
+                            "Months per sourcing cycle"
+                    },
+
+                    {
+                        value:
+                            "70%",
+
+                        label:
+                            "Less proposal review time"
                     },
 
                     {
@@ -2046,7 +2093,7 @@ const projectCaseStudies = {
                             "50%",
 
                         label:
-                            "Faster query load times"
+                            "Faster API responses"
                     },
 
                     {
@@ -2054,15 +2101,7 @@ const projectCaseStudies = {
                             "4",
 
                         label:
-                            "Divisions adopted it"
-                    },
-
-                    {
-                        value:
-                            "$7K",
-
-                        label:
-                            "Saved every year"
+                            "Divisions cut over"
                     }
                 ]
             }
