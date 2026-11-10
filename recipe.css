@@ -266,23 +266,6 @@
     animation-delay: calc(300ms + var(--pi, 0) * 70ms);
 }
 
-.rk-placeholder-note {
-    position: absolute;
-    right: 4%;
-    bottom: -0.4rem;
-
-    padding: 0.2rem 0.6rem;
-
-    border: 1px dashed rgba(58, 42, 29, 0.35);
-    border-radius: 0.4rem;
-
-    color: rgba(58, 42, 29, 0.55);
-
-    font-family: var(--type-font);
-    font-size: 0.66rem;
-    letter-spacing: 0.04em;
-}
-
 /* Floating utensils */
 .rk-doodles {
     position: absolute;
@@ -3449,5 +3432,334 @@
 @media (max-width: 760px) {
     .rk-flow {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   WHAT I'M INTO · THE SPECIALS BOARD
+   A café chalkboard with tabs. Switching tabs wipes the board
+   with an eraser, then the new list is chalked in line by line.
+========================================================= */
+
+.rk-into {
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+
+    background: var(--cream);
+    color: var(--ink);
+}
+
+.rk-board {
+    max-width: 66rem;
+
+    margin: clamp(2rem, 4vw, 3rem) auto 0;
+    padding-inline: var(--page-padding);
+}
+
+/* wooden frame */
+.rk-board__surface {
+    --chalk: #f2eee4;
+
+    position: relative;
+
+    padding: clamp(1.4rem, 3.6vw, 3rem) clamp(1.4rem, 3.6vw, 3rem) clamp(2.6rem, 4.6vw, 3.6rem);
+
+    overflow: hidden;
+
+    border: clamp(0.7rem, 1.4vw, 1.1rem) solid var(--rk-wood);
+    border-radius: 0.6rem;
+    outline: 2px solid var(--rk-ink);
+
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(255, 255, 255, 0.06), transparent 55%),
+        radial-gradient(ellipse at 80% 75%, rgba(255, 255, 255, 0.05), transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        #2d3430;
+
+    box-shadow:
+        inset 0 0 3rem rgba(0, 0, 0, 0.45),
+        0 1.6rem 3rem rgba(48, 34, 25, 0.22);
+
+    color: var(--chalk);
+}
+
+/* chalk tray */
+.rk-board__surface::after {
+    content: "";
+
+    position: absolute;
+    left: 8%;
+    bottom: 0.5rem;
+
+    width: 2.6rem;
+    height: 0.5rem;
+
+    border-radius: 0.2rem;
+
+    background: #ece7da;
+    box-shadow: 3.4rem 0 0 #e9b9a6;
+
+    transform: rotate(-4deg);
+}
+
+.rk-board__tabs {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.4rem 1.4rem;
+
+    padding-bottom: 0.8rem;
+
+    border-bottom: 2px dashed rgba(242, 238, 228, 0.35);
+}
+
+.rk-board__tab {
+    padding: 0.2rem 0;
+
+    border: 0;
+    border-bottom: 3px solid transparent;
+
+    background: none;
+    color: rgba(242, 238, 228, 0.55);
+
+    font-family: var(--hand-font);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: color 200ms ease;
+}
+
+.rk-board__tab:hover {
+    color: var(--chalk);
+}
+
+.rk-board__tab[aria-selected="true"] {
+    color: var(--chalk);
+    border-bottom-color: #f7d984;
+}
+
+.rk-board__tab:focus-visible {
+    outline: 2px dashed #f7d984;
+    outline-offset: 4px;
+}
+
+/* all lists share one grid cell, so the board is always as tall as
+   the longest list and the page never jumps when switching tabs */
+.rk-board__panels {
+    display: grid;
+}
+
+.rk-board__panel {
+    grid-area: 1 / 1;
+
+    padding-top: 1.4rem;
+}
+
+.rk-board__panel[hidden] {
+    display: block;
+    visibility: hidden;
+}
+
+.rk-board__title {
+    color: #f7d984;
+
+    font-family: var(--display-font);
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+
+    text-shadow: 0 0 1px rgba(247, 217, 132, 0.6);
+}
+
+.rk-board__list {
+    display: grid;
+    gap: 0.2rem;
+
+    margin-top: 0.9rem;
+
+    list-style: none;
+}
+
+.rk-board__list li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+
+    column-gap: 1.5rem;
+
+    padding: 0.55rem 0;
+
+    border-bottom: 1px dotted rgba(242, 238, 228, 0.22);
+}
+
+.rk-board__name {
+    font-family: var(--hand-font);
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.1;
+
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.rk-board__by {
+    grid-column: 1;
+    grid-row: 2;
+
+    color: rgba(242, 238, 228, 0.6);
+
+    font-family: var(--type-font);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
+.rk-board__score,
+.rk-board__heart,
+.rk-board__link {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+}
+
+.rk-board__score {
+    position: relative;
+
+    font-family: var(--hand-font);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* chalk circle around the perfect scores */
+.rk-board__score.is-perfect::before {
+    content: "";
+
+    position: absolute;
+    inset: -0.2em -0.45em;
+
+    border: 2px solid #f7d984;
+    border-radius: 50%;
+
+    transform: rotate(-4deg);
+    opacity: 0.85;
+}
+
+.rk-board__dim {
+    opacity: 0.3;
+}
+
+.rk-board__score--note {
+    max-width: 14rem;
+
+    font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+    white-space: normal;
+    text-align: right;
+
+    transform: rotate(-2deg);
+}
+
+.rk-board__heart {
+    color: #e9b9a6;
+
+    font-size: 1.6rem;
+}
+
+.rk-board__link {
+    border-bottom: 1.5px dashed rgba(242, 238, 228, 0.5);
+
+    font-family: var(--type-font);
+    font-size: 0.86rem;
+    white-space: nowrap;
+}
+
+.rk-board__link:hover {
+    color: #f7d984;
+    border-bottom-color: #f7d984;
+}
+
+.rk-board__updated {
+    position: absolute;
+    right: clamp(1.4rem, 3.6vw, 3rem);
+    bottom: 0.9rem;
+
+    color: rgba(242, 238, 228, 0.5);
+
+    font-family: var(--hand-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.rk-board__panel.is-pre .rk-board__title,
+.rk-board__panel.is-pre li {
+    clip-path: inset(0 100% 0 0);
+}
+
+/* lines are chalked in, left to right, one after another */
+.rk-board__panel.is-writing .rk-board__title,
+.rk-board__panel.is-writing li {
+    clip-path: inset(0 100% 0 0);
+    animation: rk-chalk 700ms cubic-bezier(0.5, 0.1, 0.3, 1) forwards;
+}
+
+.rk-board__panel.is-writing li {
+    animation-delay: calc(250ms + var(--i) * 160ms);
+}
+
+@keyframes rk-chalk {
+    to { clip-path: inset(-20% -5% -20% -5%); }
+}
+
+/* the eraser sweeps across between tabs */
+.rk-board__eraser {
+    position: absolute;
+    top: -10%;
+    left: 0;
+
+    width: 30%;
+    height: 120%;
+
+    background:
+        linear-gradient(90deg, transparent, rgba(232, 228, 218, 0.16) 30%, rgba(232, 228, 218, 0.22) 60%, transparent);
+
+    transform: translateX(-120%) skewX(-12deg);
+
+    pointer-events: none;
+}
+
+.rk-board.is-wiping .rk-board__eraser {
+    animation: rk-erase 420ms cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.rk-board.is-wiping .rk-board__panel:not([hidden]) {
+    opacity: 0;
+    transition: opacity 260ms ease 120ms;
+}
+
+@keyframes rk-erase {
+    from { transform: translateX(-120%) skewX(-12deg); }
+    to   { transform: translateX(430%) skewX(-12deg); }
+}
+
+@media (max-width: 560px) {
+    .rk-board__list li {
+        column-gap: 0.8rem;
+    }
+
+    .rk-board__score--note {
+        max-width: 8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rk-board__panel.is-writing .rk-board__title,
+    .rk-board__panel.is-writing li {
+        clip-path: none;
+        animation: none;
+    }
+
+    .rk-board.is-wiping .rk-board__eraser {
+        animation: none;
     }
 }

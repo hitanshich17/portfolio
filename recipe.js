@@ -704,3 +704,77 @@
         }).observe(card);
     }
 })();
+
+
+/* =========================================================
+   THE SPECIALS BOARD
+   Accessible tabs (arrow keys, Home/End). Switching wipes the
+   board, then chalks the new list in. The first list is chalked
+   in when the board scrolls into view.
+========================================================= */
+
+(() => {
+    const board = document.querySelector(".rk-board");
+    if (!board) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const tabs = [...board.querySelectorAll('[role="tab"]')];
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute("aria-controls")));
+    let current = 0;
+    let busy = false;
+
+    const write = (panel) => {
+        if (reduceMotion) return;
+        panel.classList.remove("is-writing");
+        void panel.offsetWidth; // restart the animation
+        panel.classList.add("is-writing");
+    };
+
+    const select = (i, focus = false) => {
+        if (i === current || busy) {
+            if (focus) tabs[i].focus();
+            return;
+        }
+        busy = true;
+        tabs.forEach((t, k) => {
+            t.setAttribute("aria-selected", String(k === i));
+            t.tabIndex = k === i ? 0 : -1;
+        });
+        if (focus) tabs[i].focus();
+
+        const swap = () => {
+            panels[current].hidden = true;
+            panels[i].hidden = false;
+            current = i;
+            board.classList.remove("is-wiping");
+            write(panels[i]);
+            busy = false;
+        };
+
+        if (reduceMotion) return swap();
+        board.classList.add("is-wiping");
+        setTimeout(swap, 380);
+    };
+
+    tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(i));
+        tab.addEventListener("keydown", (e) => {
+            const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+            if (!(e.key in map)) return;
+            e.preventDefault();
+            select((map[e.key] + tabs.length) % tabs.length, true);
+        });
+    });
+
+    if ("IntersectionObserver" in window && !reduceMotion) {
+        // keep the first list blank until the board arrives, so it can be chalked in
+        panels[current].classList.add("is-pre");
+        const io = new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting) return;
+            panels[current].classList.remove("is-pre");
+            write(panels[current]);
+            io.disconnect();
+        }, { threshold: 0.35 });
+        io.observe(board);
+    }
+})();
