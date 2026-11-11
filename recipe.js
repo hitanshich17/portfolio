@@ -444,6 +444,19 @@
 
     let topZ = 10;
 
+    // the main door swings open to show the stack inside
+    const inside = fridge.querySelector(".rk-fridge__inside");
+    const toggle = fridge.querySelector("button[data-fridge-toggle]");
+    const setOpen = (open) => {
+        fridge.classList.toggle("is-open", open);
+        if (inside) inside.inert = !open;
+        if (toggle) toggle.setAttribute("aria-expanded", String(open));
+    };
+    fridge.querySelectorAll("[data-fridge-toggle]").forEach((el) => {
+        el.addEventListener("click", () => setOpen(!fridge.classList.contains("is-open")));
+    });
+    if (inside) inside.addEventListener("click", () => setOpen(false));
+
     fridge.querySelectorAll(".rk-polaroid, .rk-note").forEach((item) => {
         let startX = 0;
         let startY = 0;
@@ -472,8 +485,8 @@
             lastX = e.clientX;
             lastT = performance.now();
 
-            // keep it on the fridge door
-            const f = fridge.getBoundingClientRect();
+            // keep it on the door it's stuck to
+            const f = (item.closest(".rk-fridge__panel") || fridge).getBoundingClientRect();
             const r = item.getBoundingClientRect();
             bounds = {
                 minX: baseX + (f.left - r.left) + 6,

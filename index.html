@@ -944,47 +944,96 @@
                         thing I want to build. The drawings on this site are
                         mine.
                     </p>
-                    <p class="rk-about__hint">psst, the photos on the fridge can be moved around</p>
+                    <p class="rk-about__hint">psst, the photos can be moved around, and the fridge opens</p>
                 </div>
 
-                <div class="rk-fridge">
-                    <span class="rk-fridge__handle" aria-hidden="true"></span>
-                    <span class="rk-fridge__seam" aria-hidden="true"></span>
+                <div class="rk-fridge" data-fridge>
+                    <div class="rk-fridge__body">
 
-                    <figure class="rk-polaroid" style="--x: 6%;  --y: 6%;  --r: -6deg; --m: #c4664a">
-                        <img src="images/thumbs/SAP-card.webp" alt="The SAP sign at the Newtown Square campus, lit up at night" loading="lazy" draggable="false">
-                        <figcaption>SAP days</figcaption>
-                    </figure>
-                    <figure class="rk-polaroid" style="--x: 50%; --y: 3%;  --r: 5deg;  --m: #92d5ed">
-                        <img src="images/thumbs/SEPTA.webp" alt="Hitanshi and two friends in front of a vintage SEPTA trolley" loading="lazy" draggable="false">
-                        <figcaption>the SEPTA crew</figcaption>
-                    </figure>
-                    <figure class="rk-polaroid" style="--x: 28%; --y: 44%; --r: -3deg; --m: #f7d984">
-                        <img src="images/thumbs/saxbys.webp" alt="A coffee being handed over the counter during a shift at Saxbys" loading="lazy" draggable="false">
-                        <figcaption>a Saxbys shift</figcaption>
-                    </figure>
-                    <figure class="rk-polaroid" style="--x: 64%; --y: 47%; --r: 7deg;  --m: #bfd4b7">
-                        <img src="images/thumbs/gradPhoto.webp" alt="Hitanshi sitting by the railing of a boat, looking out at the sea" loading="lazy" draggable="false">
-                        <figcaption>off the clock</figcaption>
-                    </figure>
+                        <div class="rk-fridge__freezer rk-fridge__panel">
+                            <span class="rk-fridge__handle" aria-hidden="true"></span>
+                            <span class="rk-fridge__badge" aria-hidden="true">chhabria</span>
 
-                    <div class="rk-note" style="--x: 4%; --y: 55%; --r: -4deg">
-                        <p class="rk-note__title">also:</p>
-                        <ul>
-                            <li>100+ students tutored</li>
-                            <li>2.5 yrs peer mentoring</li>
-                            <li>Drexel CS ’26 · 3.80 GPA</li>
-                        </ul>
+                            <div class="rk-note" style="--x: 14%; --y: 12%; --r: -4deg">
+                                <p class="rk-note__title">also:</p>
+                                <ul>
+                                    <li>100+ students tutored</li>
+                                    <li>2.5 yrs peer mentoring</li>
+                                    <li>Drexel CS ’26 · 3.80 GPA</li>
+                                </ul>
+                            </div>
+
+                            <ul class="rk-magnets" aria-label="Things I love">
+                                <li style="--x: 55%; --y: 48%; --r: -5deg; --c: #c4664a">reading</li>
+                                <li style="--x: 75%; --y: 56%; --r: 4deg;  --c: #775537">cooking</li>
+                                <li style="--x: 57%; --y: 78%; --r: 3deg;  --c: #4e6b48">outfits</li>
+                                <li style="--x: 74%; --y: 88%; --r: -6deg; --c: #2f5d7c">sketching</li>
+                            </ul>
+                        </div>
+
+                        <div class="rk-fridge__main">
+                            <div class="rk-fridge__inside" id="rk-fridge-inside" aria-label="Inside the fridge: my stack" role="group" inert>
+                                <p class="rk-fridge__inside-title">what’s inside: <span>my stack</span></p>
+                            <ul class="rk-shelf">
+                                <li class="rk-item rk-item--jar" style="--c: #e7b75a; --i: 0"><span>Python</span></li>
+                                <li class="rk-item rk-item--bottle" style="--c: #c4664a; --i: 1"><span>Java</span></li>
+                                <li class="rk-item rk-item--jar" style="--c: #5d86b5; --i: 2"><span>TypeScript</span></li>
+                            </ul>
+                            <ul class="rk-shelf">
+                                <li class="rk-item rk-item--carton" style="--c: #92d5ed; --i: 3"><span>React</span></li>
+                                <li class="rk-item rk-item--jar" style="--c: #8fb07f; --i: 4"><span>Node</span></li>
+                                <li class="rk-item rk-item--bottle" style="--c: #6f9a5b; --i: 5"><span>Spring Boot</span></li>
+                            </ul>
+                            <ul class="rk-shelf">
+                                <li class="rk-item rk-item--tin" style="--c: #3a2a1d; --i: 6"><span>Kafka</span></li>
+                                <li class="rk-item rk-item--jar" style="--c: #4f7aa8; --i: 7"><span>PostgreSQL</span></li>
+                                <li class="rk-item rk-item--tin" style="--c: #c94a3c; --i: 8"><span>Redis</span></li>
+                            </ul>
+                            <div class="rk-fridge__crisper"><span>Docker · AWS</span></div>
+                            </div>
+
+                            <div class="rk-fridge__door">
+                                <div class="rk-fridge__face rk-fridge__panel">
+                                    <span class="rk-fridge__handle rk-fridge__handle--door" data-fridge-toggle aria-hidden="true"></span>
+                                <figure class="rk-polaroid" style="--x: 14%; --y: 2%; --r: -6deg; --m: #c4664a">
+                                    <img src="images/thumbs/sap-newtown.webp" alt="Hitanshi looking at the SAP sign outside the Newtown Square campus" loading="lazy" draggable="false">
+                                    <figcaption>SAP days</figcaption>
+                                </figure>
+                                <figure class="rk-polaroid" style="--x: 57%; --y: 3%; --r: 5deg; --m: #92d5ed">
+                                    <img src="images/thumbs/SEPTA.webp" alt="Hitanshi and two friends in front of a vintage SEPTA trolley" loading="lazy" draggable="false">
+                                    <figcaption>the SEPTA crew</figcaption>
+                                </figure>
+                                <figure class="rk-polaroid" style="--x: 19%; --y: 34%; --r: 4deg; --m: #f7d984">
+                                    <img src="images/thumbs/graduation.webp" alt="Hitanshi in a blue Drexel graduation gown, sitting beside the Drexel dragon statue" loading="lazy" draggable="false">
+                                    <figcaption>graduation day</figcaption>
+                                </figure>
+                                <figure class="rk-polaroid" style="--x: 58%; --y: 35%; --r: -4deg; --m: #bfd4b7">
+                                    <img src="images/thumbs/philly-fall.webp" alt="Hitanshi in a trench coat looking up at a red autumn maple on a Philadelphia sidewalk" loading="lazy" draggable="false">
+                                    <figcaption>Philly days</figcaption>
+                                </figure>
+                                <figure class="rk-polaroid" style="--x: 14%; --y: 66%; --r: -3deg; --m: #e8a7a0">
+                                    <img src="images/thumbs/matcha.webp" alt="An iced strawberry matcha latte beside a stack of pancakes with strawberries" loading="lazy" draggable="false">
+                                    <figcaption>made for me, by me</figcaption>
+                                </figure>
+                                <figure class="rk-polaroid" style="--x: 56%; --y: 66%; --r: 6deg; --m: #c4664a">
+                                    <img src="images/thumbs/saxbys.webp" alt="A coffee being handed over the counter during a shift at Saxbys" loading="lazy" draggable="false">
+                                    <figcaption>a Saxbys shift</figcaption>
+                                </figure>
+                                </div>
+                                <div class="rk-fridge__liner" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <ul class="rk-magnets" aria-label="Things I love">
-                        <li style="--x: 34%; --y: 95%; --r: -5deg; --c: #c4664a">reading</li>
-                        <li style="--x: 50%; --y: 96%; --r: 4deg;  --c: #775537">cooking</li>
-                        <li style="--x: 66%; --y: 94%; --r: -2deg; --c: #4e6b48">outfits</li>
-                        <li style="--x: 80%; --y: 96%; --r: 6deg;  --c: #2f5d7c">sketching</li>
-                    </ul>
-                </div>
+                    <span class="rk-fridge__feet" aria-hidden="true"></span>
 
+                    <button class="rk-fridge__toggle" type="button" data-fridge-toggle aria-expanded="false" aria-controls="rk-fridge-inside">
+                        <span class="rk-fridge__toggle-open">open the fridge</span>
+                        <span class="rk-fridge__toggle-close">close the fridge</span>
+                    </button>
+                </div>
             </div>
 
         </section>
